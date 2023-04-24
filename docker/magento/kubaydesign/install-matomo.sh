@@ -1,12 +1,12 @@
 #!/bin/bash
 read -p 'Path to magento folder: ' fpath
 cd $fpath
-mkdir -p magento_data/app/code/Chessio
+sudo mkdir -p magento_data/app/code/Chessio
 if ! command -v git &> /dev/null
 then
-    dnf install git
+    sudo dnf install git
 fi
-git clone https://github.com/fnogatz/magento2-matomo.git magento_data/app/code/Chessio/Matomo
+sudo git clone https://github.com/fnogatz/magento2-matomo.git magento_data/app/code/Chessio/Matomo
 echo "Restart"
 docker compose exec --workdir /bitnami/magento magento chown -R 1:0 ../magento
 docker compose restart magento
