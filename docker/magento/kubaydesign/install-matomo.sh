@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Path to magento folder: " path
-cd $path
+read -p 'Path to magento folder: ' fpath
+cd $fpath
 mkdir -p magento_data/app/code/Chessio
 if ! command -v git &> /dev/null
 then
